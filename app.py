@@ -14,10 +14,10 @@ app = Flask(__name__)
 app.secret_key = '123456789'
 
 # 设置管理员身份###############################
-# @app.before_request
-# def fake_login_as_admin():
-#     session['username'] = '1'
-#     session['identity'] = '1'
+@app.before_request
+def fake_login_as_admin():
+    session['username'] = '1'
+    session['identity'] = '1'
 # 用于避开登陆界面并获得管理员权限##################
 
 # 配置 MySQL 数据库连接
